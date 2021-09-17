@@ -1,11 +1,10 @@
 <?php
 	
-	class Home 
+	class Footer 
 	{
 		
 		public function __construct()
 		{
 			# code...
 		}
-		
 	}

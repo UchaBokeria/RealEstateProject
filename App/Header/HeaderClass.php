@@ -1,11 +1,10 @@
 <?php
 	
-	class Home 
+	class Header 
 	{
 		
 		public function __construct()
 		{
 			# code...
 		}
-		
 	}

@@ -1,0 +1,30 @@
+{
+    "welcome": "Home",
+    "routes": [
+        {
+            "name": "Home",
+            "path": "App/Home/Home",
+            "visibility": "public"
+        },
+        {
+            "name": "Help",
+            "path": "App/Help/Help",
+            "visibility": "public"
+        },
+        {
+            "name": "Estate",
+            "path": "App/Estate/Estate",
+            "visibility": "public"
+        },
+        {
+            "name": "Profile",
+            "path": "App/Profile/Profile",
+            "visibility": "private"
+        },
+        {
+            "name": "Auth",
+            "path": "App/Auth/Auth",
+            "visibility": "public"
+        }
+    ]
+}

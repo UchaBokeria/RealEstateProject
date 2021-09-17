@@ -3,7 +3,7 @@
 	class Auth 
 	{
 		
-		public function __construct(argument)
+		public function __construct()
 		{
 			# code...
 		}

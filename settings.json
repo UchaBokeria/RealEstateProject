@@ -1,0 +1,12 @@
+{
+    "styles" : {
+        "extension": "css",
+        "use_reset_style": true
+    },
+    "CustomConsole": {
+        "errorColor": "#ED1A93",
+        "errorBgColor": "",
+        "successColor": "#1AED6D",
+        "successBgColor": ""
+    }
+}
