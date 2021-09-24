@@ -1,22 +1,26 @@
-import Helper from"./helper.js";
+import System from "./system.js";
+import Helper from "./helper.js";
 
 export default class router {
 
     constructor() {
         this.links = [];
-        this.styleExt = "css";
         this.error = false;
         this.welcome = null;
+        this.styleExt = "css";
         this.errorColor = "red";
         this.errorBgColor = "#333";
         this.successColor = "green";
         this.successBgColor = "#333";
+        this.System = new System();
         this.Helper = new Helper();
-        this.getConsoleColors();
+        this.routeMeLinks = [];
     }
 
     getRoutes = async () => {
         const bluePrint = await this.Helper.getJsonFile('./App/router.json');
+        const setting = await this.Helper.getJsonFile('./settings.json');
+        this.styleExt = (setting.styles.extension == "") ? "css" : setting.styles.extension;
         
         // check if files exist
         bluePrint.routes.forEach( el => {
@@ -26,34 +30,59 @@ export default class router {
             exists = { success: this.Helper.UrlExists(el.path + "Class.php"), ext: ".php" };
             exists = { success: this.Helper.UrlExists(el.path + "Class.js"), ext: ".js" };
 
-            var errorStyle = "background:" + this.errorBgColor + ", color:" + this.errorColor;
-            var error = "%c FILE: " + el.path + exists.ext + " DOES NOT EXISTS";
-
             if (exists.success == false) {
-                console.log(error, errorStyle);
                 this.error = exists.success;
+                this.System.log("FILE: " + el.path + exists.ext + " DOES NOT EXISTS", false);
                 return false;
             }
         });
 
-        var successStyle = "background:" + this.successBgColor + ", color:" + this.successColor;
-        var success = "%c Successfully loaded";
-        console.log(success, successStyle);
+        this.System.log("Routes Successfully Loaded", true);
         
         this.welcome = bluePrint.welcome;
         this.links = bluePrint.routes;
         return true;
     }
 
+    closedRoutes = async () => {
+        console.log(1);
+        var closedNodes = document.querySelectorAll("[route-me]");
+        console.log(closedNodes);
+        // clicking
+        closedNodes.forEach(el => {
+            console.log(3);
+            el.onclick = (each) => {
+                var router = each.target.getAttribute("route-me");
+                if (router != "")
+                    this.routeIn(router);
+                else
+                    this.System.log(" route-me attribute is empty ", false);
+            };
+        });
+    }
 
-    routeIn = async (route = this.welcome) => {
+    openRoutes = async () => {
+        var openNodes = document.querySelectorAll("[open]");
+        // defaultOpen
+        openNodes.forEach( el => {
+            var routing = el.getAttribute("open");
+            console.log(routing);
+            if (routing != "") {
+                this.routeIn(routing, el);
+                console.log(el);
+            }
+            else
+                this.System.log(" open attribute is empty ", false);
+        });
+        console.log(2);
+    }
+
+    routeIn = async (route = this.welcome, bodySection = null) => {
         // imports html of this route in global section
         // imports and calls js class of this route
         // imports style of this route in head tag
-
-        var bodySection = document.querySelector("section[start]");
-        var HEAD = document.getElementsByTagName('HEAD')[0];
-        var body = document.body;
+        if(bodySection == null)
+            bodySection = document.querySelector("section[start]");
 
         var path = "App/" + route + "/" + route;
         var HTML = await this.Helper.getFromFile("./" + path + ".html");
@@ -61,38 +90,16 @@ export default class router {
         if(HTML == null)
             HTML = "<p>I'm EMPTY</p>";
         
-
+        
         bodySection.setAttribute("start", route);
         bodySection.innerHTML = "";
         bodySection.innerHTML = HTML;
 
-        var link = document.createElement('link');
-        link.type = 'text/' + this.styleExt;
-        link.href = path + "." + this.styleExt; 
-        link.rel = 'stylesheet'; 
-        HEAD.appendChild(link);
-
-        var routerClass = document.createElement('script');
-        routerClass.type = "module";
-        routerClass.src = "./" + path + "Class.js";
-        routerClass.innerHTML = "var open = new " + route + "();";
-        body.append(routerClass);
-        
+        if(bodySection == null)
+            this.System.changeRouting();
+        this.System.callStyle(path);
+        this.System.callRouter(path, route);
     }
 
-    
-    getConsoleColors = async () => {
-        // gets console colors for error handling
-        const colors = await this.Helper.getJsonFile('./settings.json');
-        
-        if(colors.CustomConsole.errorColor != "")
-            this.errorColor = colors.CustomConsole.errorColor;
-        if(colors.CustomConsole.errorBgColor != "")
-            this.errorBgColor = colors.CustomConsole.errorBgColor;
-        if(colors.CustomConsole.successColor != "")
-            this.successColor = colors.CustomConsole.successColor;
-        if(colors.CustomConsole.successBgColor != "")
-            this.successBgColor = colors.CustomConsole.successBgColor;
-    }
 
 }

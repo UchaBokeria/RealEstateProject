@@ -1,6 +1,1 @@
-export default class Auth {
-    constructor() {
-        console.log("this is Auth");
-    }
-
-}
+console.log("this is Auth");

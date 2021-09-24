@@ -3,7 +3,7 @@
         "extension": "css",
         "use_reset_style": true
     },
-    "CustomConsole": {
+    "CustomConsole" : {
         "errorColor": "#ED1A93",
         "errorBgColor": "",
         "successColor": "#1AED6D",

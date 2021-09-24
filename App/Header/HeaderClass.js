@@ -1,6 +1,3 @@
-export default class Header {
-    constructor() {
-        console.log("this is Header");
-    }
-
-}
+// import Router from "../../modules/router.js";
+//console.log(document.querySelectorAll("[route-me]"))
+console.log("this is header");
