@@ -1,0 +1,27 @@
+@import "../../Assets/Style/variables";
+@import "../../Assets/Style/mixins";
+
+div[open="Header"] {
+    width: 100vw;
+    height: 12.25vh;
+    max-height: 12.25vh;
+    padding: 40px 50px;
+    @include flex(flex, space-between, center);
+}
+
+div[open="INROOT"] {
+    width: 100vw;
+    background: rgb(146, 146, 146);
+    height: auto;
+    min-height: 40vh;
+    display: flex;
+}
+
+div[open="Footer"] {
+    background-color: $color04;
+    width: 100vw;
+    height: 7.5vh;
+    max-height: 7.5vh;
+    display: flex;
+    @include flex(flex, center, center);
+}
