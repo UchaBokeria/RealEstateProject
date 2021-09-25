@@ -25,6 +25,13 @@ class Router {
         else document.querySelector(DEST).appendChild(document.createElement(HTML));
         this.getStyle(PATH); 
         this.getScript(PATH);
+        // work loops
+        // document.querySelectorAll("[Vfor]").forEach((loop) => {
+        //     var route = loop.getAttribute("Vfor").split('@')[0];
+        //     var act = loop.getAttribute("Vfor").split('@')[1];
+        //     var result = this.getResponse({ route: route, act: act });
+        //     this.ForeachIT(loop, result);
+        // });
         if (document.querySelector(DEST).contains(document.querySelector("[open]"))) 
             await this.openRoute(document.querySelector(DEST)); 
     }
@@ -115,6 +122,19 @@ class Router {
 
         }
         
+    }
+
+    getResponse = async (data) => {
+        var request = $.ajax({
+            type: "POST",
+            url: "response.php",
+            data: data,
+            success:  (response)=> request = response,
+            error: function (response) {
+                console.log(response);
+            }
+        });
+        return await request;
     }
 }
 

@@ -1,0 +1,60 @@
+.Questions-container {
+    width: 100%;
+    height:80vh;
+    background:#fff;
+    position: relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    .title {
+        width:90%;
+        height:7vh;
+        padding:2% 0;
+        font-size:2vw;
+    }
+
+    .Question-Answer {
+        background:#F4F3F3;
+        width:90%;
+        height:10vh;
+        border-radius:9px;
+        margin-top:6vh;
+        padding:0 1vw;
+        font-size:1.4vw;
+
+        position: relative;
+        display:flex;
+        flex-direction:column;
+        justify-content: space-around;
+
+        .hide { display:none }
+        
+        .Question {
+            width:90%;
+            height:5vh;
+            display:flex;
+            align-items:center;
+        }
+    }
+}
+
+
+
+
+@mixin flex($spacing : none,$direction : row){
+    display:flex;
+    @if $direction == column{
+        flex-direction: column;
+    }
+    @if $spacing == between{
+        justify-content: space-between;
+    }
+    @else if $spacing == around{
+        justify-content: space-around;
+    }
+    @else if $spacing == center{
+        justify-content:center;
+    }
+    align-items:center;
+}

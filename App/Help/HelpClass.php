@@ -1,10 +1,11 @@
 <?php
 	
-	class Help 
+	class Help extends Database
 	{
-		
-		public function __construct()
+
+		public function read() 
 		{
-			# code...
+			return parent::get("SELECT id, question, answer FROM help WHERE actived = 1 ");
 		}
+		
 	}

@@ -1,2 +1,2 @@
 <?php
-		ehco "hola";
+		echo "hola";
