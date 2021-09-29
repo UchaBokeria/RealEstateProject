@@ -1,7 +1,6 @@
-@import "../../Assets/Style/variables";
-@import "../../Assets/Style/mixins";
+@import '../../Assets/Style/linkin';
 
 p {
     @include Roboto(400, 24px);
-    color: $color01;
+    color: $white;
 }

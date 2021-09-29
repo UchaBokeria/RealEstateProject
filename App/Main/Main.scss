@@ -1,5 +1,4 @@
-@import "../../Assets/Style/variables";
-@import "../../Assets/Style/mixins";
+@import '../../Assets/Style/linkin';
 
 div[open="Header"] {
     width: 100vw;
@@ -18,7 +17,7 @@ div[open="INROOT"] {
 }
 
 div[open="Footer"] {
-    background-color: $color04;
+    background-color: $blue;
     width: 100vw;
     height: 7.5vh;
     max-height: 7.5vh;
