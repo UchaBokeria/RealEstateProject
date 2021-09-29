@@ -17,10 +17,11 @@
     .Question-Answer {
         background:#F4F3F3;
         width:90%;
-        height:10vh;
+        min-height:10vh;
+        height:auto;
         border-radius:9px;
         margin-top:6vh;
-        padding:0 1vw;
+        padding:1vh 1vw;
         font-size:1.4vw;
 
         position: relative;
@@ -28,13 +29,33 @@
         flex-direction:column;
         justify-content: space-around;
 
-        .hide { display:none }
-        
         .Question {
             width:90%;
             height:5vh;
             display:flex;
             align-items:center;
+        }
+
+        .rotate-180 {
+            transform:rotate(180deg);
+        }
+        
+        .Answer {
+            width:90%;
+            height:auto;
+            display:flex;
+            align-items:center;
+        }
+
+        .hide {  display:none }
+        
+        i {
+            transition:all 1s;
+            font-size: 2vw;
+            position: absolute;
+            right: 2vw;
+            color:#297bb2;
+            cursor: pointer;
         }
     }
 }
@@ -42,19 +63,3 @@
 
 
 
-@mixin flex($spacing : none,$direction : row){
-    display:flex;
-    @if $direction == column{
-        flex-direction: column;
-    }
-    @if $spacing == between{
-        justify-content: space-between;
-    }
-    @else if $spacing == around{
-        justify-content: space-around;
-    }
-    @else if $spacing == center{
-        justify-content:center;
-    }
-    align-items:center;
-}
