@@ -116,11 +116,6 @@ nav .user-language-wrapper .language-wrapper p {
   cursor: pointer;
 }
 
-nav .user-language-wrapper .user-wrapper {
-  height: 50px;
-  cursor: pointer;
-}
-
-nav .user-language-wrapper .user-wrapper img {
-  height: 100%;
+nav .user-language-wrapper .user-wrapper i {
+  font-size: 5.1vh;
 }
