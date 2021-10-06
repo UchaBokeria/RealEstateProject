@@ -16,9 +16,7 @@ div[open="Header"] {
 
 div[open="INROOT"] {
   width: 100vw;
-  background: #929292;
   height: auto;
-  min-height: 40vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,7 +29,6 @@ div[open="Footer"] {
   max-height: 7.5vh;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;

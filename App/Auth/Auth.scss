@@ -1,0 +1,133 @@
+@import "../../Assets/Style/components/components.scss";
+
+.auth-container {
+    height: 100%;
+    width: 100%;
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .login-input {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 17px;
+        }
+    }
+    .password-reset-container {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .password-reset {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            h1 {
+                @include Roboto(400, 28px);
+                color: $black;
+                text-transform: uppercase;
+            }
+            p {
+                @include Roboto(300, 21px);
+                color: $gray;
+                margin-top: 2rem;
+            }
+            .reset-input-form {
+                margin-top: 2.3rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end !important;
+                flex-direction: row;
+                gap: 50px;
+                .reset-input {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 17px;
+                }
+            }
+        }
+    }
+    .password-reset-container-2 {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .password-reset {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            h1 {
+                @include Roboto(400, 28px);
+                color: $black;
+                text-transform: uppercase;
+            }
+            p {
+                @include Roboto(300, 21px);
+                color: $gray;
+                margin-top: 2rem;
+            }
+            .reset-input-form {
+                margin-top: 2.3rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end !important;
+                flex-direction: row;
+                gap: 50px;
+                .reset-input {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 17px;
+                }
+            }
+            .reset-btn {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                width: 100%;
+                .btn {
+                    margin-top: 2.5rem;
+                }
+            }
+        }
+    }
+    .auth-question {
+        @include Roboto(400, 15px);
+        color: $blue;
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+    .password-reset-container-3 {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .text-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 36px;
+            p {
+                @include Roboto(400, 28px);
+                color: $black;
+                &.login-link {
+                    color: $blue;
+                    font-style: italic;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

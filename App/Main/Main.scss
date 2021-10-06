@@ -5,14 +5,14 @@ div[open="Header"] {
     height: 12.25vh;
     max-height: 12.25vh;
     padding: 40px 50px;
-    @include flex(flex, space-between, center);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 div[open="INROOT"] {
     width: 100vw;
-    background: rgb(146, 146, 146);
     height: auto;
-    min-height: 40vh;
     display: flex;
 }
 
@@ -22,5 +22,6 @@ div[open="Footer"] {
     height: 7.5vh;
     max-height: 7.5vh;
     display: flex;
-    @include flex(flex, center, center);
+    justify-content: center;
+    align-items: center;
 }
