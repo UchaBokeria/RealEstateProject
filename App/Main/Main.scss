@@ -1,7 +1,7 @@
 @import '../../Assets/Style/linkin';
 
 div[open="Header"] {
-    width: 100vw;
+    width: 100%;
     height: 12.25vh;
     max-height: 12.25vh;
     padding: 40px 50px;
@@ -11,14 +11,14 @@ div[open="Header"] {
 }
 
 div[open="INROOT"] {
-    width: 100vw;
+    width: 100%;
     height: auto;
     display: flex;
 }
 
 div[open="Footer"] {
     background-color: $blue;
-    width: 100vw;
+    width: 100%;
     height: 7.5vh;
     max-height: 7.5vh;
     display: flex;
