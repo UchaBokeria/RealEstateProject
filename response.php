@@ -3,8 +3,9 @@
     include_once "./vendor/Database.php";
     include_once "./Configs/SQL.php";
 
-    // ini_set("display_errors", true);
-    // error_reporting(E_ERROR);
+    // display errors
+    ini_set("display_errors", true);
+    error_reporting(E_ERROR);
 
     if(!isset($_REQUEST["route"]) || !isset($_REQUEST["act"])) {
         echo " <br> !!!!! WRONG ROUTE OR ACT !!!!!<br>";

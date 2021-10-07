@@ -1,3 +1,6 @@
-h1 {
-	color:green;
+#mySlider {
+  width: 80%;
+  margin: 3% 10%;
+  border-radius: 10px;
+  background-color: #1f1f1f;
 }
