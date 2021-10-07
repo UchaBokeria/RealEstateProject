@@ -1,10 +1,13 @@
 <?php
 	
-	class Header 
+	class Header extends Database
 	{
 		
-		public function __construct()
+		
+		public function read()
 		{
-			# code...
+			return parent::get("SELECT 1 AS id , 'dd' AS name 
+								UNION ALL 
+								SELECT 2 AS id , 'aa' AS name");
 		}
 	}
