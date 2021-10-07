@@ -68,10 +68,8 @@
 
 .input-form input {
   border: 1px solid #297bb2;
-  max-height: 4.6vh;
-  height: 4.6vh;
-  max-width: 14vw;
-  width: 14vw;
+  height: 50px;
+  width: 270px;
   border-radius: 7px;
   padding: 15px 11px;
 }
@@ -823,8 +821,27 @@
 }
 
 .auth-container {
-  height: 100%;
+  height: calc(100vh - 12.25vh - 7.5vh);
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.auth-container .show {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.auth-container .hide {
+  display: none !important;
 }
 
 .auth-container .login-container {
@@ -856,11 +873,12 @@
   gap: 17px;
 }
 
+.auth-container .register-container {
+  display: none;
+}
+
 .auth-container .password-reset-container {
-  margin-top: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -937,7 +955,7 @@
 }
 
 .auth-container .password-reset-container-2 {
-  margin-top: 100px;
+  display: none !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1046,7 +1064,7 @@
 }
 
 .auth-container .password-reset-container-3 {
-  margin-top: 100px;
+  display: none !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

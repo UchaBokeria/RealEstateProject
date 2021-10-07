@@ -7,10 +7,8 @@
     text-transform: uppercase;
     @include Roboto(400, 17px);
     @include flex(center);
-    height: 4.3vh;
-    max-height: 4.3vh;
-    width: 14vw;
-    max-width: 14vw;
+    height: 42px;
+    width: 270px;
     border-radius: 20px;
     box-shadow: none;
     outline: none;
@@ -38,10 +36,8 @@
     }
     input {
         border: 1px solid $blue;
-        max-height: 4.6vh;
-        height: 4.6vh;
-        max-width: 14vw;
-        width: 14vw;
+        height: 50px;
+        width: 270px;
         border-radius: 7px;
         padding: 15px 11px;
         &:focus-visible {

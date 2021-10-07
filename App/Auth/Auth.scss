@@ -1,9 +1,19 @@
 @import "../../Assets/Style/components/components.scss";
 
 .auth-container {
-    height: 100%;
+    height: calc(100vh - 12.25vh - 7.5vh);
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .show {
+        display: flex !important;
+    }
+    .hide {
+        display: none !important;
+    }
     .login-container {
+        // display: none !important;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -15,9 +25,11 @@
             gap: 17px;
         }
     }
+    .register-container {
+        display: none;
+    }
     .password-reset-container {
-        margin-top: 100px;
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         .password-reset {
@@ -53,7 +65,7 @@
         }
     }
     .password-reset-container-2 {
-        margin-top: 100px;
+        display: none !important;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -107,7 +119,7 @@
         }
     }
     .password-reset-container-3 {
-        margin-top: 100px;
+        display: none !important;
         display: flex;
         justify-content: center;
         align-items: center;
