@@ -9,11 +9,10 @@
 	<script type="" src="modules/Main.js"></script>
 	
 	<script type="" src="Vendor/Slider/slider.js"></script>
-	<link rel="stylesheet" href="Vendor/Slider/slider.css">
-	
 	<script type="" src="Vendor/DropDown/dropdown.js"></script>
-	<link rel="stylesheet" href="Vendor/DropDown/dropdown.css">
 
+	<link rel="stylesheet" href="Vendor/Slider/slider.css">
+	<link rel="stylesheet" href="Vendor/DropDown/dropdown.css">
 	<link rel="stylesheet" href="Assets/Icons/style.css">
 	<link rel="stylesheet" href="Assets/Style/reset.css">
   	<link rel="icon" href="Assets/favicon.ico" type="image/gif">
