@@ -211,6 +211,7 @@
             @include flex(between);
             align-items: center;
             margin-top: 0.5rem;
+            width: 60%;
             span {
                 @include Roboto(300, 14px);
                 color: $darkGray;

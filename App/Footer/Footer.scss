@@ -1,6 +1,6 @@
 @import '../../Assets/Style/linkin';
 
-p {
+.footer-p {
     @include Roboto(400, 24px);
     color: $white;
 }
