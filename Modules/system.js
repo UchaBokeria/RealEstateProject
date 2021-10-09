@@ -106,4 +106,20 @@ class System {
         style.href = url + "." + type; 
         document.head.appendChild(style);  
     }
+
+    pluginRegister = async (plugins) => {
+        var keys = Object.keys(plugins);
+        keys.forEach( key => {
+            var style = document.createElement("link");
+            style.rel = 'stylesheet'; 
+            style.href = "Vendor/" + plugins[key] + "/" + plugins[key] + ".css"
+            style.setAttribute("current", false); 
+
+            var script = document.createElement("script"); 
+            script.src = "Vendor/" + plugins[key] + "/" + plugins[key] + ".js";
+            script.setAttribute("current", false); 
+            document.head.appendChild(script); 
+            document.head.appendChild(style); 
+        });
+    }
 }

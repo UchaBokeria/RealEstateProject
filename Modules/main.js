@@ -56,5 +56,12 @@ class Router extends System {
 
 }
 
+var system = new System().pluginRegister({
+    "charts": "ApexCharts",
+    "dropdowns": "DropDown",
+    "JqueryPlugin": "JqueryPlugin",
+    "slideshow/carousel": "Slider",
+});
+
 var call = new Router();
 call.route("Main", null, false);
