@@ -119,7 +119,12 @@ class Slider extends System {
         
         var cellContent;
         if (this.options.template != null) {
-            this.cellTemplate.innerHTML = this.options.template;
+            cellContent = document.createElement("div");
+            this.options.cell.attributes.forEach( (attr) => {
+                cellContent.setAttribute(attr, "{" + attr + "}");
+            });
+            
+            cellContent.innerHTML = this.options.template;
         } else {
             cellContent = document.createElement("img");
             cellContent.setAttribute("src", "{dir}");
@@ -130,6 +135,7 @@ class Slider extends System {
             
             this.cellTemplate.appendChild(cellContent);
         }
+        this.cellTemplate.appendChild(cellContent);
 
 
         this.container.appendChild(this.cellTemplate);
