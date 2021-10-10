@@ -2,12 +2,15 @@
 	
 	class Header extends Database
 	{
-		
-		
-		public function read()
+
+		public function readCategories() 
 		{
-			return parent::get("SELECT 1 AS id , 'dd' AS name 
-								UNION ALL 
-								SELECT 2 AS id , 'aa' AS name");
+			return parent::get("SELECT * FROM estate_types WHERE parent = 0 AND actived = 1");
+
+		}
+
+		public function readLanguages() 
+		{
+			return parent::get("SELECT id, title FROM languages WHERE actived = 1");
 		}
 	}

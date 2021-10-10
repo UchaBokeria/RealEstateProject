@@ -5,6 +5,7 @@ class System {
     }
 
     ForeachIT = async (el, data) => {
+        console.log(data)
         var tmpEl = el;
         var parent = el.parentNode;
 

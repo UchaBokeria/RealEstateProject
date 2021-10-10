@@ -14,6 +14,7 @@ class Slider extends System {
             type: "slider",
             class: ["slider", "new"],
             scrollHide: true,
+            template: null,
             buttons: {
                 left: true,
                 right: true,
@@ -115,17 +116,23 @@ class Slider extends System {
         this.options.cell.class.forEach( (eachClass) => {
             this.cellTemplate.classList.add(eachClass);
         });
-
-        var cellContent = document.createElement("img");
-        cellContent.setAttribute("src", "{dir}");
         
-        this.options.cell.attributes.forEach( (attr) => {
-            cellContent.setAttribute(attr, "{" + attr + "}");
-        });
+        var cellContent;
+        if (this.options.template != null) {
+            this.cellTemplate.innerHTML = this.options.template;
+        } else {
+            cellContent = document.createElement("img");
+            cellContent.setAttribute("src", "{dir}");
+            
+            this.options.cell.attributes.forEach( (attr) => {
+                cellContent.setAttribute(attr, "{" + attr + "}");
+            });
+            
+            this.cellTemplate.appendChild(cellContent);
+        }
 
-        this.cellTemplate.appendChild(cellContent);
+
         this.container.appendChild(this.cellTemplate);
-        console.log(this.options.data.url);
         this.data = await this.getResponse(this.options.data, this.options.data.url);
         await this.ForeachIT(this.cellTemplate, this.data);
     }

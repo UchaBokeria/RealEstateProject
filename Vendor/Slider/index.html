@@ -14,7 +14,7 @@
         <script src="slider.js"></script>
         <script>
             const newslider = new Slider({
-                data: { route: "Home", act: "read", url: "../../response.php" },
+                data: { route: "Home", act: "read", vip:1 ,url: "../../response.php" },
                 area: "#mySlider",
                 type: "carousel",
                 scrollHide: false,
@@ -24,8 +24,10 @@
                     right: true,
                 },
                 scrollHide: true,
+                
                 cell: {
                     class: ["slider-cell"],
+                    attributes: ["cell-id","dir","title","description","bedrooms","rooms","price","space","floor"],
                     gap: "4vw",
                     width: "30%"
                 }
