@@ -75,8 +75,7 @@ END
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `send_count_in_role_upd` AFTER UPDATE ON `accounts` FOR EACH ROW BEGIN
-	IF(NEW.status_id != OLD.status_id) THEN
+CREATE TRIGGER `send_count_in_role_upd` AFTER UPDATE ON `accounts` FOR EACH ROW BEGIN	IF(NEW.status_id != OLD.status_id) THEN
 		UPDATE roles SET
 					 roles.members = roles.members + 1
 		 WHERE roles.id  = NEW.role_id;
