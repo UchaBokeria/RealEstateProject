@@ -1,11 +1,7 @@
-
 class System {
-    constructor() {
-
-    }
+    constructor() {}
 
     ForeachIT = async (el, data) => {
-        console.log(data)
         var tmpEl = el;
         var parent = el.parentNode;
 
@@ -31,6 +27,7 @@ class System {
             keys.forEach((each) => {
                 NewHtml = NewHtml.replace("{" + each + "}", data[i][each]);
             });
+            
             var tmpElement = (i == 0) ? el : el.cloneNode(true);
             tmpElement.innerHTML = NewHtml;
             parent.appendChild(tmpElement);
@@ -42,6 +39,7 @@ class System {
     ForIT = async (el, nuber) => {
         var tmpEl = el;
         var parent = el.parentNode;
+
         parent.innerHTML = "";
         for (let i = 0; i < nuber; i++)
             parent.appendChild(tmpEl);
@@ -78,11 +76,13 @@ class System {
                 console.log(response);
             }
         });
+
         return await request;
     }
 
     removeCurrentRoutes = async () => {
         var currentRoutes = document.querySelectorAll("[current='true']");
+        
         currentRoutes.forEach((route) => {
             document.head.removeChild(route);
         });
@@ -90,7 +90,7 @@ class System {
 
     getScript = async (url, CURRENT = true, type = "") => {
         var script = document.createElement("script"); 
-        script.src = url + "Class.js";
+        script.src = url + ".js";
         script.setAttribute("current",CURRENT); 
         if (type != "")
             script.type = type;
@@ -110,6 +110,7 @@ class System {
 
     pluginRegister = async (plugins) => {
         var keys = Object.keys(plugins);
+
         keys.forEach( key => {
             var style = document.createElement("link");
             style.rel = 'stylesheet'; 
@@ -119,8 +120,21 @@ class System {
             var script = document.createElement("script"); 
             script.src = "Vendor/" + plugins[key] + "/" + plugins[key] + ".js";
             script.setAttribute("current", false); 
+
             document.head.appendChild(script); 
             document.head.appendChild(style); 
         });
+    }
+
+    checkAuth = async (params) => {
+
+        var result = await this.getResponse({
+            act: "checkThisGuard",
+            route: "AuthGuard",
+            checkRoute: params.route,
+            checkAct: params.act
+        });
+
+        return !result.error;
     }
 }

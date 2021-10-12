@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="Assets/Icons/style.css">
 	<link rel="stylesheet" href="Assets/Style/reset.css">
 	<script src="modules/System.js"></script>
+	<script src="modules/Router.js"></script>
 	<script src="modules/Main.js"></script>
 	<title>RealEstate</title>
 </head>

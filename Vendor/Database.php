@@ -49,6 +49,31 @@
             }
         }
 
+        public function getSubs($sqlQuery , $subKeys , $print = false) 
+        {
+            if($print == true)
+                $this->print_query($sqlQuery);
+            else {
+                $data = $this->executeQuery($sqlQuery)->fetchAll();
+
+                foreach ($subKeys as $subKey) {
+                    for ($i = 0; $i < COUNT($data); $i++) {
+                        $detailsAsArray = explode("," ,$data[$i][$subKey]);
+                        unset($data[$i][$subKey]);
+                        foreach ($detailsAsArray as $item) {
+                            $obj = explode('=',$item);
+                            $key = $obj[0];
+                            $val = $obj[1];
+                            $data[$i][$key] = $val;
+                        }
+                    }
+                }
+
+                return $data;
+            } 
+                 
+        }
+
         public function get($sqlQuery , $print = false) 
         {
             if($print == true)
@@ -89,11 +114,15 @@
         {
             for($i = 0; $i < COUNT($this->params); $i++) {
                 for ($j = 0; $j < strlen($sqlQuery); $j++) {
-                    if( $sqlQuery[$j] == '?' ) 
+                    if( $sqlQuery[$j] == '?' ) {
                         $sqlQuery[$j] = $this->params[$i];
+                        break;
+                    }
+                
                 }
             }
 
+            //print_r($this->params);
             echo $sqlQuery;
         }
         

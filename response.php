@@ -1,23 +1,33 @@
 <?php 
-    include_once "./vendor/AutoLoader.php";
-    include_once "./vendor/Database.php";
-    include_once "./Configs/SQL.php";
-
     // display errors
     ini_set("display_errors", true);
     error_reporting(E_ERROR);
 
+    session_start();
+    include_once "./Configs/SQL.php";
+    include_once "./Configs/PAGING.php";
+    include_once "./vendor/Database.php";
+    include_once "./vendor/AutoLoader.php";
+    include_once "./Services/MailerX/MailerXClass.php";
+    include_once "./Services/Validator/ValidatorClass.php";
+    include_once "./Services/AuthGuard/AuthGuardClass.php";
+    
     if(!isset($_REQUEST["route"]) || !isset($_REQUEST["act"])) {
         echo " <br> !!!!! WRONG ROUTE OR ACT !!!!!<br>";
     }
     else {
+        $AUTHGUARD = new AuthGuard();
         $className = $_REQUEST["route"];
         include "App".DIRECTORY_SEPARATOR.$className.DIRECTORY_SEPARATOR.$className."Class.php";
         
         $class = $_REQUEST["route"];
         $method = $_REQUEST["act"];
 
-        $newRequest = new $class();
-        $data = $newRequest->$method();
-        echo json_encode($data);
+        if(!$AUTHGUARD->checkGuard($_REQUEST))
+            echo json_encode(["error"=>true, "message"=> "This Route Is Guarded"]);
+        else {
+            $newRequest = new $class();
+            $data = $newRequest->$method();
+            echo json_encode($data);
+        }
     }

@@ -11,13 +11,9 @@
     </head>
     <body>
         <div id="mydropdown"></div>
-
-        <div id="chart"></div> 
-
-        <script src="dropdown.js"></script>
-        <script src="../ApexCharts/apexcharts.js"></script>
+        <script src="./dropdown.js"></script>
         <script>
-            var newDropdown = new Dropdown({
+            var dropdown = new DropDown({
                 data: {
                     route: "Header",
                     act: "read",
@@ -26,49 +22,13 @@
                 area: "#mydropdown",
                 output: "name",
                 trigger: "#mydropdown",
+                class: ["container"],
                 options: {
                     chosen: { name: "aa" },
                     attributes: ["id", "name"],
                     class: ["optionies", "red"],
-                }
+                } 
             });
-
-            
-        var options = {
-                series: [{
-                    name: "Desktops",
-                    data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-                }],
-                chart: {
-                height: 350,
-                type: 'line',
-                zoom: {
-                    enabled: false
-                }
-                },
-                dataLabels: {
-                enabled: false
-                },
-                stroke: {
-                curve: 'straight'
-                },
-                title: {
-                text: 'Product Trends by Month',
-                align: 'left'
-                },
-                grid: {
-                row: {
-                    colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-                    opacity: 0.5
-                },
-                },
-                xaxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-                }
-        };
-
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
         </script>
     </body>
-</html>
+</html>readCategories
