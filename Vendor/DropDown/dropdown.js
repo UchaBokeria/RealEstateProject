@@ -1,4 +1,4 @@
-class Dropdown extends System {
+class DropDown extends System {
     constructor(options = null) {
         super();
         this.optionTemplate  = null;
@@ -15,7 +15,7 @@ class Dropdown extends System {
         this.options = {
             data: {
                 route: "Header",
-                act: "read",
+                act: "readCategories",
                 url: "../../response.php"
             },
             area: "#mydropdown",
@@ -71,7 +71,7 @@ class Dropdown extends System {
         var templateEl = document.querySelector("[manager='" + this.options.area.substring(1) + "Template" + "'");
         templateEl.innerHTML = "{" + this.options.output + "}";
         templateEl.removeAttribute("manager");
-
+        
         this.data = await this.getResponse( this.options.data, this.options.data.url );
         await this.ForeachIT( this.optionTemplate, this.data);
     }
@@ -85,8 +85,8 @@ class Dropdown extends System {
         this.selected.setAttribute("dropdown-" + this.chosenKey, this.chosenValue );
         this.selected.classList.add("dropdown-selected");
         this.parent.prepend(this.selected);
-
         this.selectedItem = this.data.find(obj => { return obj[this.chosenKey] === this.chosenValue });
+        console.log(this.selectedItem)
         document.querySelector(this.options.area + "Selected").innerHTML = this.selectedItem[this.options.output]
     }
     

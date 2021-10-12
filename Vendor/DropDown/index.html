@@ -11,21 +11,21 @@
     </head>
     <body>
         <div id="mydropdown"></div>
-        <script src="./dropdown.js"></script>
+        <script src="dropdown.js"></script>
         <script>
             var dropdown = new DropDown({
                 data: {
                     route: "Header",
-                    act: "read",
+                    act: "readLanguages",
                     url: "../../response.php"
                 },
                 area: "#mydropdown",
-                output: "name",
+                output: "title",
                 trigger: "#mydropdown",
                 class: ["container"],
                 options: {
                     chosen: { name: "aa" },
-                    attributes: ["id", "name"],
+                    attributes: [ "title"],
                     class: ["optionies", "red"],
                 } 
             });
