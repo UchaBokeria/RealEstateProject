@@ -86,7 +86,7 @@ class DropDown extends System {
         this.selected.classList.add("dropdown-selected");
         this.parent.prepend(this.selected);
         this.selectedItem = this.data.find(obj => { return obj[this.chosenKey] === this.chosenValue });
-        console.log(this.selectedItem)
+        console.log(this.data)
         document.querySelector(this.options.area + "Selected").innerHTML = this.selectedItem[this.options.output]
     }
     

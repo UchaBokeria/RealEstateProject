@@ -10,13 +10,30 @@
         <script src="../../modules/System.js"></script>
     </head>
     <body>
+        <div id="languages"></div>
         <div id="mydropdown"></div>
         <script src="dropdown.js"></script>
         <script>
-            var dropdown = new DropDown({
+            var lang = new DropDown({
                 data: {
                     route: "Header",
                     act: "readLanguages",
+                    url: "../../response.php"
+                },
+                area: "#languages",
+                output: "title",
+                trigger: "#languages",
+                class: ["container"],
+                options: {
+                    chosen: { title: "Eng" },
+                    attributes: [ "title"],
+                    class: ["optionies", "red"],
+                } 
+            });
+            var dropdown = new DropDown({
+                data: {
+                    route: "Header",
+                    act: "readCategories",
                     url: "../../response.php"
                 },
                 area: "#mydropdown",
@@ -24,11 +41,11 @@
                 trigger: "#mydropdown",
                 class: ["container"],
                 options: {
-                    chosen: { name: "aa" },
+                    chosen: { title: " category  2" },
                     attributes: [ "title"],
                     class: ["optionies", "red"],
                 } 
             });
         </script>
     </body>
-</html>readCategories
+</html>
