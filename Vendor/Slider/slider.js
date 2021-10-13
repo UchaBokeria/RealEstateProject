@@ -25,6 +25,7 @@ class Slider extends System {
             },
             cell: {
                 class: ["slider-cell"],
+                childClass: ["childCell"],
                 attributes: ["cell-id"],
                 width: "30%",
                 gap: "4vw"
@@ -135,6 +136,10 @@ class Slider extends System {
             
             this.cellTemplate.appendChild(cellContent);
         }
+        
+        this.options.cell.childClass.forEach( (eachClass) => {
+            cellContent.classList.add(eachClass);
+        });
         this.cellTemplate.appendChild(cellContent);
 
 
