@@ -222,6 +222,37 @@
 
 .statement-card .statement-image {
   width: 15.44vw;
+  position: relative;
+}
+
+.statement-card .statement-image .statement-status {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.statement-card .statement-image .statement-status.s-vip {
+  background-color: #F4BF00;
+}
+
+.statement-card .statement-image .statement-status.vip {
+  background-color: #F40049;
+}
+
+.statement-card .statement-image .favorite {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.statement-card .statement-image .favorite i {
+  font-size: 30px;
 }
 
 .statement-card .statement-image img {

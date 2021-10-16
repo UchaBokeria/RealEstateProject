@@ -222,6 +222,7 @@
 
 .statement-card .statement-image {
   width: 15.44vw;
+  position: relative;
 }
 
 .statement-card .statement-image img {
@@ -319,6 +320,7 @@
           align-items: center;
   align-items: center;
   margin-top: 0.5rem;
+  width: 60%;
 }
 
 .statement-card .statement-description .statement-properties span {

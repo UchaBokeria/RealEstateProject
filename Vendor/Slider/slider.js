@@ -18,7 +18,7 @@ class Slider extends System {
             buttons: {
                 left: true,
                 right: true,
-                leftClass: ["righy"],
+                leftClass: ["righty"],
                 rightClass: ["lefty"],
                 onLeft: async (e) => { console.log("left buttons has clicked"); },
                 onRight: async (e) => {  console.log("right buttons has clicked"); },

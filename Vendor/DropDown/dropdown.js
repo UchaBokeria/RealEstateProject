@@ -16,7 +16,7 @@ class DropDown extends System {
             data: {
                 route: "Header",
                 act: "readCategories",
-                url: "../../response.php"
+                url: "response.php"
             },
             area: "#mydropdown",
             output: "name",
@@ -85,8 +85,11 @@ class DropDown extends System {
         this.selected.setAttribute("dropdown-" + this.chosenKey, this.chosenValue );
         this.selected.classList.add("dropdown-selected");
         this.parent.prepend(this.selected);
-        this.selectedItem = this.data.find(obj => { return obj[this.chosenKey] === this.chosenValue });
+        this.selectedItem = this.data.find(obj => { return obj[this.chosenKey[0]] == this.chosenValue });
         console.log(this.data)
+        console.log(this.selectedItem)
+        console.log(this.chosenKey[0])
+        console.log(this.chosenValue)
         document.querySelector(this.options.area + "Selected").innerHTML = this.selectedItem[this.options.output]
     }
     
