@@ -1,13 +1,15 @@
 @import '../../Assets/Style/linkin';
 
 div[open="Header"] {
-    width: 100%;
-    height: 12.25vh;
-    max-height: 12.25vh;
-    padding: 40px 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    padding: 40px 0;
+    @media only screen and (max-width: 768px) {
+       justify-content: space-between;
+    }
 }
 
 div[open="INROOT"] {
