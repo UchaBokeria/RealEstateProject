@@ -342,6 +342,10 @@ nav .language-wrapper p {
   }
 }
 
+nav .user-wrapper:hover {
+  cursor: pointer;
+}
+
 nav .user-wrapper i {
   font-size: 5.1vh;
 }

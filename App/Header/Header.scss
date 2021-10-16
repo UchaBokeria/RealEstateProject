@@ -223,11 +223,9 @@ nav {
         }
     }
     .user-wrapper {
-        // height: 50px;
-        // cursor: pointer;
-        // img {
-        //     height: 100%;
-        // }
+        &:hover {
+            cursor: pointer;
+        }
         i {
             font-size: 5.1vh;
             @media only screen and (max-width: 768px) {
