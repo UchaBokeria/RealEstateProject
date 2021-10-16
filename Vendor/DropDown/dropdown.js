@@ -85,7 +85,7 @@ class DropDown extends System {
         this.selected.setAttribute("dropdown-" + this.chosenKey, this.chosenValue );
         this.selected.classList.add("dropdown-selected");
         this.parent.prepend(this.selected);
-        this.selectedItem = this.data.find(obj => { return obj[this.chosenKey[0]] == this.chosenValue });
+        this.selectedItem = this.data.findIndex(obj => { return obj[this.chosenKey[0]] == this.chosenValue });
         console.log(this.data)
         console.log(this.selectedItem)
         console.log(this.chosenKey[0])
