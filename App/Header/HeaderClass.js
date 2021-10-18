@@ -2,6 +2,22 @@
 //console.log(document.querySelectorAll("[route-me]"))
 console.log("this is header");
 
+
+$(function () {
+  let burger = $('.navbar-toggler')
+  navbar = $('.navbar')
+  logo = $('.logo')
+
+
+  $(burger).click(function () {
+    $(this).toggleClass('active');
+    $(navbar).toggleClass('navbar-active')
+    $(logo).toggleClass('active')
+    return false;
+  })
+})
+
+
 var estateDropdown = new DropDown({
   data: {
     route: "Header",
@@ -14,6 +30,22 @@ var estateDropdown = new DropDown({
   options: {
     chosen: { title: " category  2" },
     attributes: ["title"],
-    class: ["optionies", "red"],
+    class: ["optionies", "estate-categories"],
   },
+});
+
+var lang = new DropDown({
+  data: {
+      route: "Header",
+      act: "readLanguages",
+  },
+  area: "#languageDropdown",
+  output: "title",
+  trigger: "#languageDropdown",
+  class: ["container"],
+  options: {
+      chosen: { title: "Eng" },
+      attributes: [ "title"],
+      class: ["optionies", "languages"],
+  } 
 });
