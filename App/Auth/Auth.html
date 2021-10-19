@@ -9,12 +9,10 @@
       <div class="login-input">
         <label>Password</label>
         <input type="password" placeholder="Enter your Password" />
-        <p class="auth-question auth-q-forgot">Forgot Password?</p>
-        <p class="auth-question auth-q-register">
-          Don't have an account? Create one.
-        </p>
+        <p class="auth-question auth-q-forgot" Vtext="FORGOT_PASSWORD"></p>
+        <p class="auth-question auth-q-register" Vtext="DONT_HAVE_ACC"></p>
       </div>
-      <button class="btn">Sign in</button>
+      <button class="btn" Vtext="SIGN_IN"></button>
     </form>
   </div>
 
@@ -94,10 +92,10 @@
           <button class="btn">Send Code</button>
         </div>
       </div>
-        <p class="auth-question auth-q-login">
-          Already have an account? Sign in.
-        </p>
-      <button class="btn">Sign Up</button>
+      <p class="auth-question auth-q-login" Vtext="ALREADY_HAVE_ACC">
+        
+      </p>
+      <button class="btn" Vtext="SIGN_UP"></button>
     </form>
   </div>
 
@@ -107,7 +105,7 @@
       <h1>Reset Password</h1>
       <form class="input-form reset-input-form">
         <div class="reset-input">
-          <label>Email</label>
+          <label Vtext="MAIL">Email</label>
           <input type="email" placeholder="Enter your Email" />
         </div>
         <button class="btn">Send</button>
