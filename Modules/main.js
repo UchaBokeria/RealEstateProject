@@ -1,11 +1,17 @@
 var system = new System();
 
-system.pluginRegister({
-    "charts": "ApexCharts",
-    "dropdowns": "DropDown",
-    "JqueryPlugin": "JqueryPlugin",
-    "slideshow/carousel": "Slider",
-});
+system.serve( async ()=> {
+    
+    await system.pluginRegister({
+        "charts": "ApexCharts",
+        "dropdowns": "DropDown",
+        "Automator": "Automator",
+        "Translater": "Translater",
+        "JqueryPlugin": "JqueryPlugin",
+        "slideshow/carousel": "Slider",
+    });
 
-var call   = new Router();
-call.route("Main", null, false);
+    const CallRouter = new Router();
+    await CallRouter.route("Main", null, false);
+
+});

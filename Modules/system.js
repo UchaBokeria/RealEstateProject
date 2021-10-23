@@ -111,7 +111,7 @@ class System {
     pluginRegister = async (plugins) => {
         var keys = Object.keys(plugins);
 
-        keys.forEach( key => {
+        keys.forEach( async (key) => {
             var style = document.createElement("link");
             style.rel = 'stylesheet'; 
             style.href = "Vendor/" + plugins[key] + "/" + plugins[key] + ".css"
@@ -124,6 +124,7 @@ class System {
             document.head.appendChild(script); 
             document.head.appendChild(style); 
         });
+        return;
     }
 
     checkAuth = async (params) => {
@@ -136,5 +137,9 @@ class System {
         });
 
         return !result.error;
+    }
+
+    serve = async (start) => {
+        await start();
     }
 }

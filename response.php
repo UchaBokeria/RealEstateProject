@@ -9,8 +9,10 @@
     include_once "./vendor/Database.php";
     include_once "./vendor/AutoLoader.php";
     include_once "./Services/MailerX/MailerXClass.php";
+    include_once "./Services/Languager/LanguagerClass.php";
     include_once "./Services/Validator/ValidatorClass.php";
     include_once "./Services/AuthGuard/AuthGuardClass.php";
+    include_once "./Services/Automator/AutomatorClass.php";
     
     if(!isset($_REQUEST["route"]) || !isset($_REQUEST["act"])) {
         echo " <br> !!!!! WRONG ROUTE OR ACT !!!!!<br>";
