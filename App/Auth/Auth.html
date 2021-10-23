@@ -9,38 +9,25 @@
       <div class="login-input">
         <label>Password</label>
         <input type="password" placeholder="Enter your Password" />
-        <p class="auth-question auth-q-forgot">Forgot Password?</p>
-        <p class="auth-question auth-q-register">
-          Don't have an account? Create one.
-        </p>
+        <p class="auth-question auth-q-forgot" Vtext="FORGOT_PASSWORD"></p>
+        <p class="auth-question auth-q-register" Vtext="DONT_HAVE_ACC"></p>
       </div>
-      <button class="btn">Sign in</button>
+      <button class="btn" Vtext="SIGN_IN"></button>
     </form>
   </div>
 
   <!-- Register -->
   <div class="register-container">
     <form class="input-form">
-      <!-- Name Inputs -->
+      <!-- Name & Email Inputs -->
       <div class="inputs-wrapper">
         <div class="input-container">
-          <label>Firstname</label>
-          <input type="text" placeholder="Enter your Firstname" />
+          <label>Fullname</label>
+          <input type="text" placeholder="Enter your Fullname" />
         </div>
-        <div class="input-container">
-          <label>Lastname</label>
-          <input type="text" placeholder="Enter your Lastname" />
-        </div>
-      </div>
-      <!-- Email & Username -->
-      <div class="inputs-wrapper">
         <div class="input-container">
           <label>Email</label>
           <input type="email" placeholder="Enter your Email" />
-        </div>
-        <div class="input-container">
-          <label>Username</label>
-          <input type="text" placeholder="Enter your Username" />
         </div>
       </div>
       <!-- Password -->
@@ -83,21 +70,15 @@
           <input type="text" placeholder="Enter your City" />
         </div>
       </div>
-      <!-- Phone & Verify -->
+      <!-- Phone & Submit -->
       <div class="inputs-wrapper">
         <div class="input-container">
           <label>Phone</label>
           <input type="tel" placeholder="Enter your Phone" />
         </div>
-        <div class="input-container phone-verify">
-          <input type="text" placeholder="Enter Code" />
-          <button class="btn">Send Code</button>
-        </div>
+        <button class="btn" Vtext="SIGN_UP"></button>
       </div>
-        <p class="auth-question auth-q-login">
-          Already have an account? Sign in.
-        </p>
-      <button class="btn">Sign Up</button>
+      <p class="auth-question auth-q-login" Vtext="ALREADY_HAVE_ACC"></p>
     </form>
   </div>
 
@@ -107,7 +88,7 @@
       <h1>Reset Password</h1>
       <form class="input-form reset-input-form">
         <div class="reset-input">
-          <label>Email</label>
+          <label Vtext="MAIL">Email</label>
           <input type="email" placeholder="Enter your Email" />
         </div>
         <button class="btn">Send</button>

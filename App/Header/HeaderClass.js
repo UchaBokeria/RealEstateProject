@@ -28,7 +28,7 @@ var estateDropdown = new DropDown({
   trigger: "#estateDropdown",
   class: ["container"],
   options: {
-    chosen: { title: " category  2" },
+    chosen: { title: "Apartments" },
     attributes: ["title"],
     class: ["optionies", "estate-categories"],
   },

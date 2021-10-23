@@ -16,3 +16,19 @@ $(function () {
     $(statementCard).toggleClass("vertical");
   });
 });
+
+var estateDropdown = new DropDown({
+  data: {
+    route: "Estate",
+    act: "sortRead",
+  },
+  area: "#estateDropdown",
+  output: "title",
+  trigger: "#estateDropdown",
+  class: ["container"],
+  options: {
+    chosen: { title: "Apartments" },
+    attributes: ["title"],
+    class: ["optionies", "estate-categories"],
+  },
+});

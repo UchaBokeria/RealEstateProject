@@ -823,7 +823,12 @@
 }
 
 .statements-area {
-  margin-left: 400px;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    width: 58vw;
 }
 
 .statements-area .estate-settings {
@@ -837,6 +842,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 0 14px;
+  width: 58vw;
 }
 
 .statements-area .estate-settings .sorter {
@@ -897,14 +903,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
   margin-top: 40px;
   gap: 40px;
+  width: 58vw;
 }
 
 .statements-area .statements-container.v-statements-container {
