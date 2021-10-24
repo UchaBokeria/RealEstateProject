@@ -37,7 +37,7 @@
                                             LEFT JOIN automator_onchange  ON automator_onchange.automator_el_id = automator_elements.id and automator_onchange.actived = 1
                                             LEFT JOIN automator_classes ON automator_classes.automator_el_id = automator_elements.id and automator_classes.actived = 1
                                             LEFT JOIN automator_data  ON automator_data.automator_el_id = automator_elements.id and automator_data.actived = 1
-
+                                            WHERE `automator_elements`.actived = 1
                                             GROUP BY automator_elements.id 
                                             ORDER BY automator_elements.section ASC LIMIT 0,10 ; ");
             return $SCHEME;
