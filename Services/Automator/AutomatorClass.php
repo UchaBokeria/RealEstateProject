@@ -39,7 +39,7 @@
                                             LEFT JOIN automator_data  ON automator_data.automator_el_id = automator_elements.id and automator_data.actived = 1
                                             WHERE `automator_elements`.actived = 1
                                             GROUP BY automator_elements.id 
-                                            ORDER BY automator_elements.section ASC LIMIT 0,10 ; ");
+                                            ORDER BY automator_elements.section ASC  ; ");
             return $SCHEME;
         }
 
