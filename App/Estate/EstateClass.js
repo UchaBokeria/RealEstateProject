@@ -8,12 +8,14 @@ $(function () {
     }
   });
   let statementsContainer = $(".statements-container");
-  statementCard = $(".statement-card");
-  statementViewBtn = $(".estate-view");
+  var statementCard = $(".statement-card");
+  var statementViewBtn = $(".estate-view");
 
   $(statementViewBtn).click(function () {
     $(statementsContainer).toggleClass("v-statements-container");
-    $(statementCard).toggleClass("vertical");
+    document.querySelectorAll('.statement-card').forEach((e) => {
+      e.classList.toggle('vertical')
+    })
   });
 });
 
