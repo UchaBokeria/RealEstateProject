@@ -181,7 +181,7 @@
 .statement-card {
   width: 17.2vw;
   background-color: #ffffff;
-  padding: 14px;
+  padding: 3%;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
@@ -628,11 +628,11 @@
 }
 
 .analytics-card {
-  width: 67.7vw;
+  width: 100%;
 }
 
 .analytics-card .analytics-statement-image {
-  width: 67.7vw;
+  width: inherit;
   position: relative;
   background-color: #000000;
   border-radius: 5px;
@@ -757,6 +757,14 @@
 
 .profile-container .icon-edit:hover:before {
   color: #ffffff;
+}
+
+.profile-container .profile-image {
+  max-width: 127px;
+}
+
+.profile-container .profile-image img {
+  width: 100%;
 }
 
 .profile-container .profile-info h1 {

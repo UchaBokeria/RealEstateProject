@@ -6,7 +6,6 @@
         public function __construct() 
         {
             $this->routes = [
-                "Profile" => "FULL",
                 "admin" => []
             ];
 

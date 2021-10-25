@@ -137,7 +137,7 @@
 .statement-card {
     width: 17.2vw;
     background-color: #ffffff;
-    padding: 14px;
+    padding: 3%;
     transition: all 0.5s ease-in-out;
     &.vertical {
         display: flex;
@@ -433,9 +433,9 @@
 
 // Analytics Card
 .analytics-card {
-    width: 67.7vw;
+    width: 100%;
     .analytics-statement-image {
-        width: 67.7vw;
+        width: inherit;
         position: relative;
         background-color: $black;
         border-radius: 5px;
@@ -522,6 +522,12 @@
             &:before {
                 color: $white;
             }
+        }
+    }
+    .profile-image {
+        max-width: 127px;
+        img {
+            width: 100%;
         }
     }
     .profile-info {
