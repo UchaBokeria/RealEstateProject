@@ -58,7 +58,6 @@ var chart = new ApexCharts(
 );
 chart.render();
 
-
 // Dropdown
 var dashboardDropdown = new DropDown({
   data: {
@@ -76,38 +75,55 @@ var dashboardDropdown = new DropDown({
   },
 });
 
+// Datepicker
+$("#datepicker").datepicker({
+  inline: true,
+});
+$("#bookmarkDatepicker").datepicker({
+  inline: true,
+});
 
+// Dashboard Panel & Elements
 
+document.querySelectorAll(".dashboard-button").forEach((e) => {
+  e.addEventListener("click", () => {
+    document.querySelectorAll(".dashboard-button").forEach((el) => {
+      el.classList.remove("active");
+    });
 
-document.querySelectorAll(".dashboard-button").forEach(e => {
-  e.addEventListener('click', () => {
-    let dashboardButtonAttr = e.getAttribute('dashboard-tab')
-    console.log(dashboardButtonAttr)
-    console.log(e)
-    if (dashboardButtonAttr == "dashboard") {
-      e.classList.add('active')
-      if (e.classList.contains('active')) {
-        e.classList.remove('active')
+    document.querySelectorAll(".db-element").forEach((dashboardElement) => {
+      dashboardElement.classList.add("hidden");
+
+      let dashboardButtonAttr = e.getAttribute("dashboard-tab");
+      let dashboardElementAttr =
+        dashboardElement.getAttribute("dashboard-element");
+      if (
+        (dashboardButtonAttr == "dashboard") &
+        (dashboardElementAttr == "dashboard")
+      ) {
+        e.classList.add("active");
+        dashboardElement.classList.remove("hidden");
+      } else if (
+        (dashboardButtonAttr == "bookmarks") &
+        (dashboardElementAttr == "bookmarks")
+      ) {
+        e.classList.add("active");
+        dashboardElement.classList.remove("hidden");
+      } else if (
+        (dashboardButtonAttr == "analytics") &
+        (dashboardElementAttr == "analytics")
+      ) {
+        e.classList.add("active");
+        dashboardElement.classList.remove("hidden");
+      } else if (
+        (dashboardButtonAttr == "profile") &
+        (dashboardElementAttr == "profile")
+      ) {
+        e.classList.add("active");
+        dashboardElement.classList.remove("hidden");
+      } else {
+        return false;
       }
-      console.log(e)
-    } else if (dashboardButtonAttr == "bookmarks") {
-      e.classList.add('active')
-    }
-    else if (dashboardButtonAttr == "analytics") {
-      e.classList.add('active')
-    }
-    else if (dashboardButtonAttr == "profile") {
-      e.classList.add('active')
-    } else if (e.classList.contains('active')) {
-      e.classList.remove('active')
-    }
-  })
-})
-
-// dashboardButton.addEventListener('click', () => {
-//   let dashboardButtonAttr = dashboardButton.getAttribute('dashboard-tab')
-//   console.log(dashboardButtonAttr)
-//   console.log('clicked')
-// })
-
-// console.log(dashboardButton)
+    });
+  });
+});

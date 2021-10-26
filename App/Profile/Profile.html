@@ -1,6 +1,6 @@
 <div class="dashboard-panel">
   <div class="dashboard-navigation-panel">
-    <div class="dashboard-button" dashboard-tab="dashboard">
+    <div class="dashboard-button active" dashboard-tab="dashboard">
       <i class="icon-dashboard"></i>
       <p>Dashboard</p>
     </div>
@@ -24,7 +24,7 @@
 </div>
 
 <!-- Dashboard -->
-<div class="dashboard">
+<div class="dashboard db-element" dashboard-element="dashboard">
   <div class="dashboard-settings">
     <button>Create</button>
     <div class="sorter">
@@ -38,6 +38,9 @@
           <i class="icon-search"></i>
         </button>
       </form>
+    </div>
+    <div class="datePicker">
+      <input type="text" id="datepicker" placeholder="Pick a date"/>
     </div>
   </div>
   <div class="dashboard-statements">
@@ -118,13 +121,18 @@
 </div>
 
 <!-- Bookmarks -->
-<div class="bookmark hidden">
+<div class="bookmark hidden db-element" dashboard-element="bookmarks">
   <div class="bookmark-search">
     <form class="input-form">
-      <input type="text" placeholder="Search" />
-      <button class="search-btn">
-        <i class="icon-search"></i>
-      </button>
+      <div class="search-wrapper">
+        <input type="text" placeholder="Search" />
+        <button class="search-btn">
+          <i class="icon-search"></i>
+        </button>
+      </div>
+      <div class="datePicker">
+        <input type="text" id="bookmarkDatepicker" placeholder="Pick a date"/>
+      </div>
     </form>
   </div>
   <div class="bookmark-statements">
@@ -190,7 +198,7 @@
 </div>
 
 <!-- Analytics -->
-<div class="analytics hidden">
+<div class="analytics hidden db-element" dashboard-element="analytics">
   <div class="analytics-card">
     <div class="analytics-statement-image">
       <img src="./Assets/Uploads/admin-statement.jpg" alt="#" />
@@ -249,7 +257,7 @@
 </div>
 
 <!-- Profile -->
-<div class="profile hidden">
+<div class="profile hidden db-element" dashboard-element="profile">
   <div class="profile-container">
     <i class="icon-edit"></i>
     <div class="profile-image">

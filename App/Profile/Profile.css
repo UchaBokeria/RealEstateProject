@@ -933,17 +933,17 @@
   transition: all 0.3s ease-out;
 }
 
-.dashboard-panel .dashboard-navigation-panel .dashboard-button:active {
+.dashboard-panel .dashboard-navigation-panel .dashboard-button.active {
   background-color: #297bb2;
 }
 
-.dashboard-panel .dashboard-navigation-panel .dashboard-button:active p {
+.dashboard-panel .dashboard-navigation-panel .dashboard-button.active p {
   color: #ffffff;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
-.dashboard-panel .dashboard-navigation-panel .dashboard-button:active i:before {
+.dashboard-panel .dashboard-navigation-panel .dashboard-button.active i:before {
   color: #ffffff;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -1092,7 +1092,14 @@
   color: #c4c4c4;
 }
 
+@media only screen and (max-width: 330px) {
+  .dashboard .dashboard-settings .dashboard-search .input-form input {
+    width: 210px;
+  }
+}
+
 .dashboard .dashboard-settings .dashboard-search .input-form .search-btn {
+  padding: 0;
   background-color: unset;
 }
 
@@ -1110,6 +1117,40 @@
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   color: #000000;
+}
+
+@media only screen and (max-width: 895.98px) {
+  .dashboard .dashboard-settings .datePicker {
+    margin-top: 20px;
+  }
+}
+
+.dashboard .dashboard-settings .datePicker input {
+  height: 38px;
+  width: 270px;
+  border-radius: 7px;
+  padding: 15px 11px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  border: 1px solid #297bb2;
+}
+
+.dashboard .dashboard-settings .datePicker input:focus-visible {
+  outline: none;
+}
+
+.dashboard .dashboard-settings .datePicker input::-webkit-input-placeholder {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #c4c4c4;
+}
+
+@media only screen and (max-width: 330px) {
+  .dashboard .dashboard-settings .datePicker input {
+    width: 210px;
+  }
 }
 
 .dashboard .dashboard-statements {
@@ -1190,6 +1231,25 @@
       -ms-flex-direction: row;
           flex-direction: row;
   gap: 17px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.bookmark .bookmark-search .input-form .search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 17px;
 }
 
 .bookmark .bookmark-search .input-form input {
@@ -1213,8 +1273,15 @@
   color: #c4c4c4;
 }
 
+@media only screen and (max-width: 330px) {
+  .bookmark .bookmark-search .input-form input {
+    width: 210px;
+  }
+}
+
 .bookmark .bookmark-search .input-form .search-btn {
   background-color: unset;
+  padding: 0;
 }
 
 .bookmark .bookmark-search .input-form .search-btn:hover i:before {

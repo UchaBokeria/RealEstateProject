@@ -43,7 +43,7 @@
                     }
                 }
             }
-            &:active {
+            &.active {
                 background-color: $blue;
                 p {
                     color: $white;
@@ -151,13 +151,12 @@
                         font-size: 15px;
                         color: #c4c4c4;
                     }
+                    @media only screen and (max-width: 330px) {
+                        width: 210px;
+                    }
                 }
                 .search-btn {
-                    // position: absolute;
-                    // right: 0;
-                    // top: 50%;
-                    // -webkit-transform: translateY(-50%);
-                    // transform: translateY(-50%);
+                    padding: 0;
                     background-color: unset;
                     &:hover {
                         i {
@@ -174,6 +173,33 @@
                             color: $black;
                         }
                     }
+                }
+            }
+        }
+        .datePicker {
+            @media only screen and (max-width: 895.98px) {
+                margin-top: 20px;
+            }
+            input {
+                height: 38px;
+                width: 270px;
+                border-radius: 7px;
+                padding: 15px 11px;
+                font-family: "Roboto", sans-serif;
+                font-weight: 400;
+                font-size: 15px;
+                border: 1px solid #297bb2;
+                &:focus-visible {
+                    outline: none;
+                }
+                &::-webkit-input-placeholder {
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 400;
+                    font-size: 15px;
+                    color: #c4c4c4;
+                }
+                @media only screen and (max-width: 330px) {
+                    width: 210px;
                 }
             }
         }
@@ -224,7 +250,14 @@
             align-items: center !important;
             flex-direction: row;
             gap: 17px;
-
+            flex-wrap: wrap;
+            .search-container {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center !important;
+                flex-direction: row;
+                gap: 17px;
+            }
             input {
                 height: 50px;
                 width: 270px;
@@ -242,6 +275,9 @@
                     font-size: 15px;
                     color: #c4c4c4;
                 }
+                @media only screen and (max-width: 330px) {
+                    width: 210px;
+                }
             }
             .search-btn {
                 // position: absolute;
@@ -250,6 +286,7 @@
                 // -webkit-transform: translateY(-50%);
                 // transform: translateY(-50%);
                 background-color: unset;
+                padding: 0;
                 &:hover {
                     i {
                         &:before {
