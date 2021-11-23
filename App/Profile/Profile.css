@@ -1362,6 +1362,10 @@
   display: none;
 }
 
+.analytics .analytics-card.hidden {
+  display: none;
+}
+
 .analytics .analytics-card:not(:first-child) {
   margin-top: 45px;
 }
@@ -1379,6 +1383,10 @@
   width: 100%;
 }
 
+.analytics .paging.hidden {
+  display: none;
+}
+
 .analytics .paging .paging-track {
   gap: 20px;
   width: unset !important;
@@ -1388,6 +1396,68 @@
   .analytics .paging .paging-track {
     width: 100% !important;
   }
+}
+
+.analytics-post {
+  margin: 45px 40px 0;
+}
+
+.analytics-post.hidden {
+  display: none;
+}
+
+.analytics-post .analytics-statistics {
+  margin-top: 45px;
+}
+
+.analytics-post .analytics-statistics .sparks-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+@media only screen and (max-width: 764.98px) {
+  .analytics-post .analytics-statistics .sparks-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.analytics-post .analytics-statistics .sparks-container .apex-widget {
+  width: 100%;
+}
+
+.analytics-post .analytics-statistics .bar-donut-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  gap: 5vw;
+  margin-top: 45px;
+}
+
+@media only screen and (max-width: 764.98px) {
+  .analytics-post .analytics-statistics .bar-donut-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.analytics-post .analytics-statistics .bar-donut-container .apex-widget {
+  width: 100%;
 }
 
 .profile {

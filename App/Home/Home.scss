@@ -1,5 +1,5 @@
 @import "../../Assets/Style/linkin";
-@import '../../Assets/Style/components/components.scss';
+@import "../../Assets/Style/components/components.scss";
 
 #homeCarousel {
     width: 100%;
@@ -24,10 +24,10 @@
     align-items: center;
     margin: 70px 0;
     .search {
-        display: grid;
-        grid-template-columns: 2fr 2fr 5fr;
-        // justify-content: space-between;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
+        gap: 5vw;
         width: 70vw;
         padding: 16px 30px;
         background-color: $seachGray;
@@ -38,13 +38,6 @@
             align-items: center;
             gap: 30px;
             // width: 100%;
-            &:after {
-                content: "";
-                display: block;
-                height: 50px;
-                width: 2px;
-                background-color: $white;
-            }
             p {
                 @include Roboto(400, 21px);
                 color: $white;
@@ -61,7 +54,7 @@
             align-items: center;
             margin-left: 30px;
             gap: 30px;
-            &:after {
+            &:before {
                 content: "";
                 display: block;
                 height: 50px;
@@ -83,6 +76,13 @@
             justify-content: space-between;
             align-items: center;
             margin-left: 30px;
+            &:before {
+                content: "";
+                display: block;
+                height: 50px;
+                width: 2px;
+                background-color: $white;
+            }
             input {
                 @include Roboto(400, 21px);
                 color: $white;
@@ -106,6 +106,9 @@
     padding: 0 40px;
     width: 100%;
     margin-top: 10vh;
+    @media only screen and (max-width: 996.98px) {
+        min-width: 50% !important;
+        }
     &:first-child {
         margin-top: 0 !important;
     }
@@ -138,15 +141,34 @@
             }
         }
     }
-    #homeStatementSlider, #VipHomeStatementSlider, #SuperVipHomeStatementSlider {
+    #homeStatementSlider,
+    #VipHomeStatementSlider,
+    #SuperVipHomeStatementSlider {
         height: 40vh !important;
         position: relative !important;
         .slider-Container {
             background-color: transparent;
             .slider-cell {
                 background-color: transparent;
+                margin-right: 0 !important;
+                min-width: 25% !important;
+                @media only screen and (max-width: 1251.98px) {
+                    min-width: 33% !important;
+                }
+                @media only screen and (max-width: 996.98px) {
+                    min-width: 50% !important;
+                }
+                @media only screen and (max-width: 668.98px) {
+                    min-width: 100% !important;
+                }
                 .statement-properties {
                     width: 100% !important;
+                }
+                .statement-card {
+                    width: 300px !important;
+                    .statement-image {
+                        width: 100%;
+                    }
                 }
             }
         }

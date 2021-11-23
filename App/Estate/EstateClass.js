@@ -34,3 +34,17 @@ var estateDropdown = new DropDown({
     class: ["optionies", "estate-categories"],
   },
 });
+
+var automator = new Automator({
+  data: {
+      route: "Automator",
+      act: "build",
+  },
+  area: "#Automator",
+  class: ["container"],
+  options: {
+      chosen: { name: "aa" },
+      attributes: ["id", "name"],
+      class: ["optionies", "red"],
+  }
+});

@@ -17,7 +17,7 @@ class Automator extends System {
             data: {
                 route: "Automator",
                 act: "build",
-                url: "../../response.php"
+                url: "response.php"
             },
             area: "#Automator",
             classes: ["container"],

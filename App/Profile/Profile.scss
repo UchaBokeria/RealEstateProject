@@ -344,6 +344,9 @@
         display: none;
     }
     .analytics-card {
+        &.hidden {
+            display: none;
+        }
         &:not(:first-child) {
             margin-top: 45px;
         }
@@ -353,11 +356,50 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+        &.hidden {
+            display: none;
+        }
         .paging-track {
             gap: 20px;
             width: unset !important;
             @media only screen and (max-width: 521.98px) {
                 width: 100% !important;
+            }
+        }
+    }
+}
+
+.analytics-post {
+    margin: 45px 40px 0;
+    &.hidden {
+        display: none;
+    }
+    .analytics-statistics {
+        margin-top: 45px;
+        .sparks-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            @media only screen and (max-width: 764.98px) {
+                flex-wrap: wrap;
+            }
+            .apex-widget {
+                width: 100%;
+            }
+        }
+        .bar-donut-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            gap: 5vw;
+            margin-top: 45px;
+            @media only screen and (max-width: 764.98px) {
+                flex-wrap: wrap;
+            }
+            .apex-widget {
+                width: 100%;
             }
         }
     }

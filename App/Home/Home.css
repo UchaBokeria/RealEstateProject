@@ -894,13 +894,16 @@
 }
 
 .search-container .search {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 2fr 5fr;
-      grid-template-columns: 2fr 2fr 5fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 5vw;
   width: 70vw;
   padding: 16px 30px;
   background-color: #2E2E2E;
@@ -918,14 +921,6 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 30px;
-}
-
-.search-container .search .re-type:after {
-  content: "";
-  display: block;
-  height: 50px;
-  width: 2px;
-  background-color: #ffffff;
 }
 
 .search-container .search .re-type p {
@@ -953,7 +948,7 @@
   gap: 30px;
 }
 
-.search-container .search .re-location:after {
+.search-container .search .re-location:before {
   content: "";
   display: block;
   height: 50px;
@@ -985,6 +980,14 @@
   margin-left: 30px;
 }
 
+.search-container .search .search-form:before {
+  content: "";
+  display: block;
+  height: 50px;
+  width: 2px;
+  background-color: #ffffff;
+}
+
 .search-container .search .search-form input {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -1011,6 +1014,12 @@
   padding: 0 40px;
   width: 100%;
   margin-top: 10vh;
+}
+
+@media only screen and (max-width: 996.98px) {
+  .home-statement {
+    min-width: 50% !important;
+  }
 }
 
 .home-statement:first-child {
@@ -1068,19 +1077,65 @@
   cursor: pointer;
 }
 
-.home-statement #homeStatementSlider, .home-statement #VipHomeStatementSlider, .home-statement #SuperVipHomeStatementSlider {
+.home-statement #homeStatementSlider,
+.home-statement #VipHomeStatementSlider,
+.home-statement #SuperVipHomeStatementSlider {
   height: 40vh !important;
   position: relative !important;
 }
 
-.home-statement #homeStatementSlider .slider-Container, .home-statement #VipHomeStatementSlider .slider-Container, .home-statement #SuperVipHomeStatementSlider .slider-Container {
+.home-statement #homeStatementSlider .slider-Container,
+.home-statement #VipHomeStatementSlider .slider-Container,
+.home-statement #SuperVipHomeStatementSlider .slider-Container {
   background-color: transparent;
 }
 
-.home-statement #homeStatementSlider .slider-Container .slider-cell, .home-statement #VipHomeStatementSlider .slider-Container .slider-cell, .home-statement #SuperVipHomeStatementSlider .slider-Container .slider-cell {
+.home-statement #homeStatementSlider .slider-Container .slider-cell,
+.home-statement #VipHomeStatementSlider .slider-Container .slider-cell,
+.home-statement #SuperVipHomeStatementSlider .slider-Container .slider-cell {
   background-color: transparent;
+  margin-right: 0 !important;
+  min-width: 25% !important;
 }
 
-.home-statement #homeStatementSlider .slider-Container .slider-cell .statement-properties, .home-statement #VipHomeStatementSlider .slider-Container .slider-cell .statement-properties, .home-statement #SuperVipHomeStatementSlider .slider-Container .slider-cell .statement-properties {
+@media only screen and (max-width: 1251.98px) {
+  .home-statement #homeStatementSlider .slider-Container .slider-cell,
+  .home-statement #VipHomeStatementSlider .slider-Container .slider-cell,
+  .home-statement #SuperVipHomeStatementSlider .slider-Container .slider-cell {
+    min-width: 33% !important;
+  }
+}
+
+@media only screen and (max-width: 996.98px) {
+  .home-statement #homeStatementSlider .slider-Container .slider-cell,
+  .home-statement #VipHomeStatementSlider .slider-Container .slider-cell,
+  .home-statement #SuperVipHomeStatementSlider .slider-Container .slider-cell {
+    min-width: 50% !important;
+  }
+}
+
+@media only screen and (max-width: 668.98px) {
+  .home-statement #homeStatementSlider .slider-Container .slider-cell,
+  .home-statement #VipHomeStatementSlider .slider-Container .slider-cell,
+  .home-statement #SuperVipHomeStatementSlider .slider-Container .slider-cell {
+    min-width: 100% !important;
+  }
+}
+
+.home-statement #homeStatementSlider .slider-Container .slider-cell .statement-properties,
+.home-statement #VipHomeStatementSlider .slider-Container .slider-cell .statement-properties,
+.home-statement #SuperVipHomeStatementSlider .slider-Container .slider-cell .statement-properties {
   width: 100% !important;
+}
+
+.home-statement #homeStatementSlider .slider-Container .slider-cell .statement-card,
+.home-statement #VipHomeStatementSlider .slider-Container .slider-cell .statement-card,
+.home-statement #SuperVipHomeStatementSlider .slider-Container .slider-cell .statement-card {
+  width: 300px !important;
+}
+
+.home-statement #homeStatementSlider .slider-Container .slider-cell .statement-card .statement-image,
+.home-statement #VipHomeStatementSlider .slider-Container .slider-cell .statement-card .statement-image,
+.home-statement #SuperVipHomeStatementSlider .slider-Container .slider-cell .statement-card .statement-image {
+  width: 100%;
 }
